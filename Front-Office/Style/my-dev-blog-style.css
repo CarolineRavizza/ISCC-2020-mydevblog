@@ -31,8 +31,14 @@ p
     margin-left: auto;
     margin-right: auto;
     width: 750px;
-    text-align: justify;
+    text-align: center;
 }
+
+.center-form
+{
+    width: 50px!important;
+}
+
 .main
 {
     display: flex;

@@ -8,15 +8,7 @@
     </head>
 
     <body>
-        <header>
-            <h1><br/>Objectif Zelda</h1>
-        </header>
-
-        <div class="main">
-            <div class="image">
-                <img src="Style/13ec60a5b6d6aa4a85d566faae04c21c.jpg" width="200x200">
-            </div>
-            <div>
+    <nav>
             <?php if($_GET['page'] == 'accueil') : ?>
                         <strong><a style="color:#17c1ff" href="my-dev-blog.html">Accueil</a></strong>
                         <?php else : ?>
@@ -27,7 +19,7 @@
                         <?php else : ?>
                     <a href="http://localhost:8888/ISCC-2020/ISCC-2020-mydevblog/Front-Office/front.php?page=articles">Articles</a>
                     <?php endif; ?>
-                    <?php if($_GET['page'] == 'articles') : ?>
+                    <?php if($_GET['page'] == 'contact') : ?>
                         <strong><a style="color:#17c1ff" href="my-dev-blog-contact.html">Contact</a></strong>
                         <?php else : ?>
                     <a href="http://localhost:8888/ISCC-2020/ISCC-2020-mydevblog/Front-Office/front.php?page=contact">Contact</a>
@@ -38,8 +30,17 @@
                     <a href="http://localhost:8888/ISCC-2020/ISCC-2020-mydevblog/Front-Office/front.php?page=contact-form">Form Contact</a>
                     <?php endif; ?>
                 </nav>
+        <header>
+            <h1><br/>Objectif Zelda</h1>
+        </header>
+
+        <div class="main">
+            <div class="image">
+                <img src="Style/13ec60a5b6d6aa4a85d566faae04c21c.jpg" width="200x200">
             </div>
-            <?php
+            <div>
+
+        <?php
     if($_GET['page'] == 'accueil')
     {
         include('my-dev-blog.html');
@@ -59,12 +60,15 @@
         include('contact-form.php');
     }
     ?>
-        </div>
+            </div>
+         
+        
             <div class="img">
                 <img src="Style/13ec60a5b6d6aa4a85d566faae04c21c.jpg" width="200x200">
             </div>
             
         </div>
+        
     <?php
     include('footer.php')
     ?>
