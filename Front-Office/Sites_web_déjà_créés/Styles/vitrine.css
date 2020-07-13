@@ -1,0 +1,166 @@
+@font-face{
+    font-family: 'font_title';
+    src: url(nasalization-rg.ttf);
+}
+@font-face{
+    font-family: 'font_text';
+    src: url(Open_Sans/OpenSans-Regular.ttf);
+}
+header
+{
+    background-image: url(assetD04/texture-header.jpg);
+    height: 150px;
+    width: 100%;
+}
+.a
+{
+    display: inline-block;
+    background-color: #2e2f30;
+    padding-right: 50px;
+    margin: 0px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #2e2f30;
+    text-align: right;
+    vertical-align: middle;
+}
+a:hover
+{
+    background-color: #17c1ff;
+}
+.right
+{
+    width: 33%;
+}
+.left
+{
+    width: 33%;
+}
+.middle
+{
+    width: 33%;
+}
+body
+{
+    background-color:#f2f2f2;
+    font-family: 'font_text';
+    font-size: 14px;
+    text-align: center;
+}
+.content2
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 810px;
+    text-align: center;
+}
+h1
+{ 
+    font-family: 'font_title';
+    font-size: 40px;
+    color: #27d1ff;
+    vertical-align: middle;
+    text-align: center;
+}
+h2
+{ 
+    text-transform: uppercase;
+    text-shadow: -2px 1px 13px black;
+    color: #e6e6e6;
+}
+p
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 750px;
+    text-align: center;
+}
+.nav
+{
+    background-color: #2e2f30;
+    text-align: right;
+}
+:active
+{
+    color: #17c1ff;
+    font-weight: bold;
+}
+.center
+{ 
+    margin-right: auto;
+    margin-left: auto;
+    width: 810px;
+}
+
+table 
+{
+    table-layout: fixed;
+    width: 100%;
+    border: solid;
+    border-color: #f2f2f2;
+  }
+  
+  thead th:nth-child(1) {
+    width: 10%;
+    background-color:  #17c1ff;
+  }
+  
+  thead th:nth-child(2) {
+    width: 90%;
+    background-color:  #17c1ff;
+  }
+td
+{ 
+    text-align: left;
+}
+.image_flottante_left
+{
+    float: left;
+    width: 50%;
+    height: 10%;
+    padding-right: 2px;
+}
+.image_flottante_right
+{
+    float: right;
+    width: 42%;
+    height: 10%;
+}
+.flex
+{
+    display: flex;
+    flex: row;
+    align-items: center;
+}
+.white
+{
+    color: #fff;
+}
+form
+{ 
+    width: 300px;
+    padding: 8px;
+}
+.hauteur
+{
+    height: 30px;
+    border: 2px #e6e6e6
+}
+.large
+{
+    width: 250px;
+    border: 2px #e6e6e6;
+}
+input :hover
+{
+    background-color: #17c1ff;
+}
+.border
+{
+    border: 2px #e6e6e6;
+}
+.button :hover
+{
+    background-color: #e6e6e6;
+    box-shadow: inset 60px -16px grey;
+}

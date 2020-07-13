@@ -10,26 +10,30 @@
     <body>
     <nav>
             <?php if($_GET['page'] == 'accueil') : ?>
-                        <strong><a style="color:#17c1ff" href="my-dev-blog.html">Accueil</a></strong>
+                        <strong><a style="color:#17c1ff" href="front.php?page=accueil">Accueil</a></strong>
                         <?php else : ?>
-                    <a href="http://localhost:8888/ISCC-2020/ISCC-2020-mydevblog/Front-Office/front.php?page=accueil">Accueil</a>
+                    <a href="front.php?page=accueil">Accueil</a>
                     <?php endif; ?>
                     <?php if($_GET['page'] == 'articles') : ?>
-                        <strong><a style="color:#17c1ff" href="my-dev-blog-articles.html">Articles</a></strong>
+                        <strong><a style="color:#17c1ff" href="front.php?page=articles">Articles</a></strong>
                         <?php else : ?>
-                    <a href="http://localhost:8888/ISCC-2020/ISCC-2020-mydevblog/Front-Office/front.php?page=articles">Articles</a>
+                    <a href="front.php?page=articles">Articles</a>
                     <?php endif; ?>
                     <?php if($_GET['page'] == 'contact') : ?>
-                        <strong><a style="color:#17c1ff" href="my-dev-blog-contact.html">Contact</a></strong>
+                        <strong><a style="color:#17c1ff" href="front.php?page=contact">Contact</a></strong>
                         <?php else : ?>
-                    <a href="http://localhost:8888/ISCC-2020/ISCC-2020-mydevblog/Front-Office/front.php?page=contact">Contact</a>
+                    <a href="front.php?page=contact">Contact</a>
                     <?php endif; ?>
                     <?php if($_GET['page'] == 'contact-form') : ?>
-                        <strong><a style="color:#17c1ff" href="contact-form.php">Form Contact</a></strong>
+                        <strong><a style="color:#17c1ff" href="front.php?page=contact-form">Form Contact</a></strong>
                         <?php else : ?>
-                    <a href="http://localhost:8888/ISCC-2020/ISCC-2020-mydevblog/Front-Office/front.php?page=contact-form">Form Contact</a>
+                    <a href="front.php?page=contact-form">Form Contact</a>
                     <?php endif; ?>
-                </nav>
+                    <?php if($_GET['page'] == 'connexion') : ?>
+                        <strong><a style="color:#17c1ff" href="front.php?page=connexion">Connexion</a></strong>
+                        <?php else : ?>
+                    <a href="front.php?page=connexion">Connexion</a>
+                    <?php endif; ?>
         <header>
             <h1><br/>Objectif Zelda</h1>
         </header>
@@ -59,7 +63,29 @@
     elseif ($_GET['page'] == 'contact-form') {
         include('contact-form.php');
     }
+    elseif ($_GET['page'] == 'connexion') {
+        include('connexion.php');
+    }
+    elseif ($_GET['page'] == 'securite') {
+        include('securite.php');
+    } 
     ?>
+    <?php
+    session_start();
+    if(isset($_SESSION['loginn']))
+    {
+        echo '<p> Login: ' .$_SESSION['loginn']. '</p>';
+        if($_COOKIE['loginn'])
+        {
+            $_SESSION['loginn'] = $_COOKIE['loginn'];
+        }
+        else
+        {
+        echo "<p> Cliquez <a href='front.php?page=connexion'>ici</a> pour vous connecter.</p>";
+        }
+    }
+
+?>
             </div>
          
         

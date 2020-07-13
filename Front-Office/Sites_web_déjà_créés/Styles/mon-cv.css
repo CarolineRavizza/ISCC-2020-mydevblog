@@ -1,0 +1,80 @@
+header
+{
+    background-color: grey;
+}
+.content
+{
+    display: flex;
+    flex-direction: row
+}
+.right
+{
+    width: 33%;
+    height: 33%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.left
+{
+    width: 33%;
+    height: 33%;
+}
+.middle
+{
+    width: 33%;
+    height: 33%;
+    vertical-align: middle;
+}
+.right1
+{
+    width: 50%;
+    height: 33%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.left1
+{
+    width: 60%;
+    height: 33%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.color
+{
+ background-color: white;
+ padding-left: 10%;
+ padding-right: 10%;
+}
+.color2
+{
+    background-color: lightgrey;
+}
+.border
+{
+    border: solid 2px black;
+}
+.right2
+{
+    width: 33%;
+    height: 33%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.left2
+{
+    width: 33%;
+    height: 33%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.middle2
+{
+    width: 33%;
+    height: 33%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.margin
+{
+    margin:5%;
+}
