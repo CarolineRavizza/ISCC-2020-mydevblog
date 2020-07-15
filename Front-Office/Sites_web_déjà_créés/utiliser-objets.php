@@ -1,5 +1,5 @@
 <?php
-    $date1 = new DateTime('13-07-2020 15:20:00', new DateTimeZone('Europe/Paris'));
+    $date1 = new DateTime('15-07-2020 11:34:30', new DateTimeZone('Europe/Paris'));
     echo $date1 -> format('Y-m-d ');
     echo $date1 -> format('H-i-s');
     echo '<br/>';
