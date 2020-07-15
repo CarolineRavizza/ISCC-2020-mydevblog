@@ -10,24 +10,24 @@
     <body>
     <nav>
             <?php if($_GET['page'] == 'accueil') : ?>
-                        <strong><a style="color:#17c1ff" href="front.php?page=accueil">Accueil</a></strong>
+                        <strong><a style="color:#17c1ff" href="back-office.php?page=accueil">Accueil</a></strong>
                         <?php else : ?>
-                    <a href="front.php?page=accueil">Accueil</a>
+                    <a href="back-office.php?page=accueil">Accueil</a>
                     <?php endif; ?>
                     <?php if($_GET['page'] == 'articles') : ?>
-                        <strong><a style="color:#17c1ff" href="front.php?page=articles">Articles</a></strong>
+                        <strong><a style="color:#17c1ff" href="back-office.php?page=articles">Articles</a></strong>
                         <?php else : ?>
-                    <a href="front.php?page=articles">Articles</a>
+                    <a href="back-office.php?page=articles">Articles</a>
                     <?php endif; ?>
                     <?php if($_GET['page'] == 'contact') : ?>
-                        <strong><a style="color:#17c1ff" href="front.php?page=contact">Contact</a></strong>
+                        <strong><a style="color:#17c1ff" href="back-office.php?page=contact">Contact</a></strong>
                         <?php else : ?>
-                    <a href="front.php?page=contact">Contact</a>
+                    <a href="back-office.php?page=contact">Contact</a>
                     <?php endif; ?>
                     <?php if($_GET['page'] == 'connexion') : ?>
-                        <strong><a style="color:#17c1ff" href="front.php?page=connexion">Connexion</a></strong>
+                        <strong><a style="color:#17c1ff" href="back-office.php?page=connexion">Connexion</a></strong>
                         <?php else : ?>
-                    <a href="front.php?page=connexion">Connexion</a>
+                    <a href="back-office.php?page=connexion">Connexion</a>
                     <?php endif; ?>
         <header>
             <h1><br/>Objectif Zelda</h1>
@@ -42,31 +42,17 @@
         <?php
     if($_GET['page'] == 'accueil')
     {
-        include('my-dev-blog.html');
+        include('ajout-utilisateurs.php');
     }
     elseif($_GET['page'] == 'articles')
     {
-        include('my-dev-blog-articles.html');
+        include('ajout-articles.php');
     }
-    elseif($_GET['page'] == 'contact')
+    elseif($_GET['page'] == '404')
     {
-        include('my-dev-blog-contact.html');
-    }
-    elseif ($_GET['page'] == 'Erreur-404') {
         include('404.php');
     }
-    elseif ($_GET['page'] == 'contact-form') {
-        include('contact-form.php');
-    }
-    elseif ($_GET['page'] == 'connexion') {
-        include('connexion.php');
-    }
-    elseif ($_GET['page'] == 'securite') {
-        include('securite.php');
-    } 
-    elseif ($_GET['page'] == '404') {
-        include('404.php');
-    }
+ 
     ?>
     <?php
     session_start();
