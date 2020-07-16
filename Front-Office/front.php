@@ -35,18 +35,18 @@
 
         <div class="main">
             <div class="image">
-                <img src="Style/13ec60a5b6d6aa4a85d566faae04c21c.jpg" width="200x200">
+                <img src="Style/13ec60a5b6d6aa4a85d566faae04c21c.jpg" width="250x200">
             </div>
             <div>
 
         <?php
     if($_GET['page'] == 'accueil')
     {
-        include('my-dev-blog.html');
+        include('my-dev-blog.php');
     }
     elseif($_GET['page'] == 'articles')
     {
-        include('my-dev-blog-articles.html');
+        include('my-dev-blog-articles.php');
     }
     elseif($_GET['page'] == 'contact')
     {
@@ -64,9 +64,9 @@
     elseif ($_GET['page'] == 'securite') {
         include('securite.php');
     } 
-    elseif ($_GET['page'] == '404') {
-        include('404.php');
-    }
+    elseif ($_GET['id'] == '1') {
+        include('article.php');
+    } 
     ?>
     <?php
     session_start();
@@ -88,7 +88,7 @@
          
         
             <div class="img">
-                <img src="Style/13ec60a5b6d6aa4a85d566faae04c21c.jpg" width="200x200">
+                <img src="Style/13ec60a5b6d6aa4a85d566faae04c21c.jpg" width="250x200">
             </div>
             
         </div>

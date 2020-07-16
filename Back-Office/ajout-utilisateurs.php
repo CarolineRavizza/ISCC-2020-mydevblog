@@ -1,66 +1,28 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
     <head>
         <meta charset="utf-8">
-        <title>Accueil</title>
-        <link rel="stylesheet" href="Style/my-dev-blog-fonts.css">
-        <link rel="stylesheet" href="Style/my-dev-blog-style.css">
+        <title>Ajout-articles</title>
+        <link rel="stylesheet" href="Styles/my-dev-blog-fonts.css">
+        <link rel="stylesheet" href="Styles/my-dev-blog-style.css">
+        <link rel="stylesheet" href="Styles/my-dev-blog-contact-form.css">
+</head>
 
-    </head>
-<?php
-session_start();
-function connect_to_database(){
-    $servername = 'localhost';
-    $username = 'root';
-    $password = 'root';
-    $databasename = "MyDevBlog";
+        <h2> Ajouter un utilisateur </h2>
 
-    try{
-        $pdo=new PDO("mysql:host=$servername;dbname=$databasename", $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        <form method="POST" action="back-office.php?page=utilisateurs">
+                <p>
+                    <label>Login</label> : <input class="border" type="text" name="loginn" id="loginn" autofocus required/>
+                </p>
+                <p>
+                    <label>Password</label> : <input class="large" type="password" name="passwordd" id="passwordd" required></p>
+                
+                    <div class="bouton">
+                        <p>
+                    <button type="submit" value="Envoyer">Enregistrer</button>
+                    </p>
+                
+            </form>
+</div>
 
-        return($pdo);
-    }
-    catch(PDOException $e){
-        echo "Erreur : " .$e->getMessage();
 
-    }
-}
-connect_to_database();
-
-function login ($pdo){
-    try{
-            if (!empty($_POST['loginn']) && !empty($_POST['passwordd'])){
-                $login=$_POST['loginn'];
-                $password=$_POST['passwordd'];
-
-                $requete=$pdo->query("SELECT loginn
-                FROM utilisateurs");
-                $res=$requete->fetchAll();
-
-                if ($res){
-
-                    if($login == $res[0]['loginn']){
-                        echo "<p> Ce compte existe déjà.</p>";
-                        $sql= "UPDATE utilisateurs
-                        SET passwordd='$password'
-                        WHERE loginn='$login'";
-                        $pdo->exec($sql);
-                        echo '<p> Compte ajouté à la base de données.</p>';
-                    }
-                }
-                    else{
-                        echo "<p>Ce compte n'a pas pu être enregistré dans la base de données. </p>";
-                        }
-            }
-        }
-    catch(PDOException $e){
-        echo "Login erreur" .$e->getMessage();
-
-    }
-}
-
-$pdo= connect_to_database();
-login($pdo);
-?>
-</html>

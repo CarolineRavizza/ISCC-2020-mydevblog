@@ -26,6 +26,11 @@ h3
     font-size: 30px;
     text-align: center;
 }
+h4
+{ 
+    font-family: 'Font_titres';
+    font-size: 25px;
+}
 p
 {
     margin-left: auto;

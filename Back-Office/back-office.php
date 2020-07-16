@@ -2,49 +2,58 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>MyDevBlog</title>
-        <link rel="stylesheet" href="Style/my-dev-blog-fonts.css">
-        <link rel="stylesheet" href="Style/my-dev-blog-style.css">
+        <title>MyDevBlog - Admin</title>
+        <link rel="stylesheet" href="Styles/my-dev-blog-fonts.css">
+        <link rel="stylesheet" href="Styles/my-dev-blog-style.css">
+        <link rel="stylesheet" href="Styles/my-dev-blog-contact-form.css">
     </head>
 
     <body>
     <nav>
-            <?php if($_GET['page'] == 'accueil') : ?>
-                        <strong><a style="color:#17c1ff" href="back-office.php?page=accueil">Accueil</a></strong>
+            <?php if($_GET['page'] == 'accueil-admin') : ?>
+                        <strong><a style="color:#17c1ff" href="back-office.php?page=accueil-admin">Accueil - admin</a></strong>
                         <?php else : ?>
-                    <a href="back-office.php?page=accueil">Accueil</a>
+                    <a href="back-office.php?page=accueil-admin">Accueil - admin</a>
                     <?php endif; ?>
-                    <?php if($_GET['page'] == 'articles') : ?>
-                        <strong><a style="color:#17c1ff" href="back-office.php?page=articles">Articles</a></strong>
+                    <?php if($_GET['page'] == 'ajout-articles') : ?>
+                        <strong><a style="color:#17c1ff" href="back-office.php?page=ajout-articles">Ajouter des articles</a></strong>
                         <?php else : ?>
-                    <a href="back-office.php?page=articles">Articles</a>
+                    <a href="back-office.php?page=ajout-articles">Ajouter des articles</a>
                     <?php endif; ?>
-                    <?php if($_GET['page'] == 'contact') : ?>
-                        <strong><a style="color:#17c1ff" href="back-office.php?page=contact">Contact</a></strong>
+                    <?php if($_GET['page'] == 'supprimer-articles') : ?>
+                        <strong><a style="color:#17c1ff" href="back-office.php?page=supprimer-articles">Supprimer des articles</a></strong>
                         <?php else : ?>
-                    <a href="back-office.php?page=contact">Contact</a>
+                    <a href="back-office.php?page=supprimer-articles">Supprimer des articles</a>
                     <?php endif; ?>
-                    <?php if($_GET['page'] == 'connexion') : ?>
-                        <strong><a style="color:#17c1ff" href="back-office.php?page=connexion">Connexion</a></strong>
+                    <?php if($_GET['page'] == 'ajouter-utilisateurs') : ?>
+                        <strong><a style="color:#17c1ff" href="back-office.php?page=ajouter-utilisateurs">Ajouter des utilisateurs</a></strong>
                         <?php else : ?>
-                    <a href="back-office.php?page=connexion">Connexion</a>
+                    <a href="back-office.php?page=ajouter-utilisateurs">Ajouter des utilisateurs</a>
                     <?php endif; ?>
+                    <?php if($_GET['page'] == 'supprimer-utilisateur') : ?>
+                        <strong><a style="color:#17c1ff" href="back-office.php?page=supprimer-utilisateur">Supprimer un utilisateur</a></strong>
+                        <?php else : ?>
+                    <a href="back-office.php?page=supprimer-utilisateur">Supprimer un utilisateur</a>
+                    <?php endif; ?>
+                   
+
         <header>
             <h1><br/>Objectif Zelda</h1>
         </header>
 
         <div class="main">
-            <div class="image">
-                <img src="Style/13ec60a5b6d6aa4a85d566faae04c21c.jpg" width="200x200">
-            </div>
-            <div>
 
+            <div class="image">
+                <img src="Styles/13ec60a5b6d6aa4a85d566faae04c21c.jpg" width="200x200">
+            </div>
+
+            <div>
         <?php
-    if($_GET['page'] == 'accueil')
+    if($_GET['page'] == 'accueil-admin')
     {
-        include('ajout-utilisateurs.php');
+        include('my-dev-blog.php');
     }
-    elseif($_GET['page'] == 'articles')
+    elseif($_GET['page'] == 'ajout-articles')
     {
         include('ajout-articles.php');
     }
@@ -52,33 +61,44 @@
     {
         include('404.php');
     }
- 
-    ?>
-    <?php
-    session_start();
-    if(isset($_SESSION['loginn']))
+    elseif($_GET['page'] == 'ajouter-utilisateurs')
     {
-        echo '<p> Login: ' .$_SESSION['loginn']. '</p>';
-        if($_COOKIE['loginn'])
-        {
-            $_SESSION['loginn'] = $_COOKIE['loginn'];
-        }
-        else
-        {
-        echo "<p> Cliquez <a href='front.php?page=connexion'>ici</a> pour vous connecter.</p>";
-        }
+        include('ajout-utilisateurs.php');
     }
-
-?>
+    elseif($_GET['page'] == 'utilisateurs')
+    {
+        include('utilisateurs.php');
+    }
+    elseif($_GET['page'] == 'confirmation-articles')
+    {
+        include('articles-ajoutés.php');
+    }
+    elseif($_GET['page'] == 'supprimer-articles')
+    {
+        include('supprimer-articles.php');
+    }
+    elseif($_GET['page'] == 'delete-confirmed')
+    {
+        include('delete-confirmed.php');
+    }
+    elseif($_GET['page'] == 'supprimer-utilisateur')
+    {
+        include('supprimer-utilisateurs.php');
+    }
+    elseif($_GET['page'] == 'delete-user-confirmed')
+    {
+        include('delete-user.php');
+    }
+    ?>
             </div>
          
         
             <div class="img">
-                <img src="Style/13ec60a5b6d6aa4a85d566faae04c21c.jpg" width="200x200">
+                <img src="Styles/13ec60a5b6d6aa4a85d566faae04c21c.jpg" width="200x200">
             </div>
             
         </div>
-        
-    <?php
+
+        <?php
     include('footer.php')
     ?>
