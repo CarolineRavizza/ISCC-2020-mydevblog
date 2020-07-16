@@ -30,11 +30,15 @@
     $articles = $pdo->query("SELECT * FROM articles")->fetchAll();
 
 
-    foreach ($articles as $articles){
-        echo "<ul><li><h4>".$articles['titre']."</h4></li></ul>";
-        echo $articles['date'];
-        echo "<p>".$articles['introduction']."</p>";
-        echo "<a href='front.php?page=article".$article['id']."> Lire plus...</a>";
+    foreach ($articles as $article){
+        echo "<ul><li><h4>".$article['titre']."</h4></li></ul>";
+        echo $article['dates'];
+        echo "<p>".$article['introduction']."</p>";
+        ?>
+        
+     <a href='front.php?page=article&id=<?php echo $article['id']?>'> Lire plus...</a>
+     
+    <?php
     }
 ?>
 

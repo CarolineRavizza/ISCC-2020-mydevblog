@@ -10,10 +10,10 @@
 
     <form  method="POST" action="back-office.php?page=delete-confirmed">
                 <p>
-                    <label>Numéro</label> : <input class="hauteur" type="number" name="id" id="id" required/>
+                    <label>Date</label> : <input type="date" name="dates" id="dates" required/>
                 </p>
                 <p>
-                    <label>Titre</label> : <input class="hauteur" type="text" name="titre" id="titre" required>
+                    <label>Titre</label> : <input type="text" name="titre" id="titre" required>
                 </p>
                     <div class="bouton">
                         <p>

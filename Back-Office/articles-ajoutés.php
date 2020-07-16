@@ -22,7 +22,7 @@ function ajoutarticles ($pdo){
         $Introduction=$_POST['introduction'];
         $Article=$_POST['texte1'];
         $Dates=$_POST['dates'];
-        $Numero=$_POST['id'];
+        $Image=$_POST['image1'];
 
 
 
@@ -32,7 +32,7 @@ function ajoutarticles ($pdo){
 
             $sql="INSERT INTO
             articles (dates, id, titre, introduction, image1, texte1)
-            VALUES('$Dates' , '$Numero', '$Titre' , '$Introduction' , ' ' , '$Article')";
+            VALUES('$Dates' , '', '$Titre' , '$Introduction' , '$Image' , '$Article')";
             $pdo->exec($sql);
             echo '<p>Article ajouté à la base de données avec succès! </p>';
             echo "<p>Cliquez <a href='http://localhost:8888/ISCC-2020/ISCC-2020-mydevblog/Front-Office/front.php?page=articles'>ici</a> pour revenir aux articles</p>";

@@ -12,10 +12,10 @@
 
         <form method="POST" action="back-office.php?page=utilisateurs">
                 <p>
-                    <label>Login</label> : <input class="border" type="text" name="loginn" id="loginn" autofocus required/>
+                    <label>Login</label> : <input  type="text" name="loginn" id="loginn" autofocus required/>
                 </p>
                 <p>
-                    <label>Password</label> : <input class="large" type="password" name="passwordd" id="passwordd" required></p>
+                    <label>Password</label> : <input type="password" name="passwordd" id="passwordd" required></p>
                 
                     <div class="bouton">
                         <p>

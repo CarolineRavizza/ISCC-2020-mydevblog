@@ -15,29 +15,24 @@ function connect_to_database(){
 
     }
 }
+
 function affichearticles($pdo){
-    if(isset($_GET['id']) AND !empty($_GET['id'])) 
-    {
-        $get_id = htmlspecialchars($_GET['id']);
-        $articles = $pdo->query("SELECT *
+    $id = $_GET['id'];
+
+        $article = $pdo->query("SELECT *
         FROM articles
-        WHERE id = ? ")->fetchAll();
-        $article->execute(array($get_id));
-    }
-    else 
-    {
-    die('Cet article n\'existe pas !');
-    }
+        WHERE id = '$id' ")->fetchAll();
+
+    echo "<h2>".$article[0]['titre']."</h2>";
+    echo $article[0]['dates'];
+    echo "<p>".$article[0]['introduction']."</p>";
+    ?>
+        
+    <p><a href=<?php echo $article[0]['image1']?>> Ici se trouve une Image</a></p>
     
-    foreach ($articles as $articles){
-        echo "<h2>".$articles['titre']."</h2>";
-        echo $articles['dates'];
-        echo "<p>".$articles['introduction']."</p>";
-        echo '<img src="Style/' . $data["image1"] . '">';
-        echo "<p>".$articles['texte1']."</p>";
-    
-    }
-}   
+   <?php
+    echo "<p>".$article[0]['texte1']."</p>";
+}
 $pdo = connect_to_database();
 affichearticles($pdo);
 ?>

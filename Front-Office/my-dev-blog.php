@@ -48,10 +48,15 @@
     ORDER BY dates DESC
     LIMIT 5")->fetchAll();
     
-    foreach ($articles as $articles){
-        echo "<ul><li><h4>".$articles['titre']."</h4></li></ul>";
-        echo "<p>".$articles['introduction']."</p>";
-    }
+    foreach ($articles as $article){
+        echo "<ul><li><h4>".$article['titre']."</h4></li></ul>";
+        echo "<p>".$article['introduction']."</p>";
+        ?>
+        
+        <a href='front.php?page=article&id=<?php echo $article['id']?>'> Lire plus...</a>
+        
+       <?php
+       }
 }
 
    afficher_cinq_articles($pdo);

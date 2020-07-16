@@ -64,7 +64,7 @@
     elseif ($_GET['page'] == 'securite') {
         include('securite.php');
     } 
-    elseif ($_GET['id'] == '1') {
+    elseif ($_GET['page'] == 'article') {
         include('article.php');
     } 
     ?>

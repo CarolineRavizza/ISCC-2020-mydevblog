@@ -11,7 +11,7 @@
 
         <form method="POST" action="back-office.php?page=delete-user-confirmed">
                 <p>
-                    <label>Login</label> : <input class="border" type="text" name="loginn" id="loginn" autofocus required/>
+                    <label>Login</label> : <input type="text" name="loginn" id="loginn" autofocus required/>
                 </p>
                     <div class="bouton">
                         <p>
